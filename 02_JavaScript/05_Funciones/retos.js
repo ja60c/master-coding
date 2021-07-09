@@ -1,3 +1,4 @@
+console.log('Hola desde retos 🖐');
 
 // Crea una función de suma donde:
 // 1+1=3   
