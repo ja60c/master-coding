@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;1,100&display=swap');
+
+h1 {
+    color: rgb(117, 86, 82);
+    font-family:'Roboto Mono', monospace;
+    transition: 5s;
+}
+h1:hover {
+    font-size: 150px;
+    transition: 3s;
+}
+h2{
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+p{
+    color: pink;
+}
+.sub-1 {
+    color: rgb(53, 255, 53);
+}
+.sub-2{
+    color: coral;
+    font-family: 'Roboto Mono', monospace;
+}
+#foto-perfil{
+    width: 200px;
+    border-radius: 30px;
+    border-bottom-left-radius: 3px;
+}
+#foto-perfil:hover{
+    transform: rotate(25deg);
+    width: 30%;
+    transition: 3s;
+}
+#punk{
+    width: 200px;
+    border-radius: 100px;
+}
+#punk:hover{
+    width: 500px;
+    transform: rotate(-25deg);
+    transition: 3s;
+}
+p:hover{
+    font-size: 30px;
+    transition: 3s;
+}
+input{
+    display:block;
+    height: 30px;
+    width: 50%;
+    border: 3px dotted;
+    margin: 30px;
+    border-color: red;
+}
+input:focus{
+    outline-color: royalblue;
+}

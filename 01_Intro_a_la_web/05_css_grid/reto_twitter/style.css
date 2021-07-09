@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #b9b9b9;
+}
+.general{
+    width: 100vw;
+    height: 100vh;
+    background-color: #cacaca;
+    display: grid;
+
+    grid-template-columns: 25% 1fr 30%;
+    grid-template-rows: 05% 20% 70% 1fr;
+    grid-gap: .2rem;
+    grid-row-gap: .5rem;
+
+    
+}
+.menu_left{
+    background-color: white;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+/* empiezan de centro */
+
+.centro_arriba{
+    background-color: #cacaca;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    display: flex;
+    flex-direction: column
+}
+
+.centro_a1{
+    background-color: white;
+    height: 25vh;
+    width: 45vw;
+    margin-bottom: .2rem;
+}
+.centro_a2{
+    background-color: white;
+    height: 75vh;
+    width: 45vw;
+}
+
+.centro_abajo{
+    background-color: #cacaca;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.twitt1{
+    background-color: white;
+    height: 20vh;
+    width: 45vw;
+    margin-bottom: .2rem;
+}
+.twitt2{
+    background-color: white;
+    height: 65vh;
+    width: 45vw;
+    margin-bottom: .2rem;
+}
+.twitt3{
+    background-color: white;
+    height: 15vh;
+    width: 45vw;
+    margin-bottom: .2rem;
+}
+
+/* terminan de centro */
+
+.menu_right{
+    background-color:  white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column  
+    
+}
+.right1{
+    background-color: rgb(227, 240, 255);
+    height: 7vh;
+    width: 24vw;
+    margin: .4rem 1rem .4rem .05rem;
+    border-radius: 2rem;
+}
+.right2{
+    background-color: rgb(227, 240, 255);
+    height: 60vh;
+    width: 24vw;
+    margin: .4rem 1rem .4rem .05rem;
+    border-radius: 1rem;
+}
+.right3{
+    background-color: rgb(227, 240, 255);
+   height: 35vh;
+    width: 24vw;
+    margin: .4rem 1rem 0 .05rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+}
+
+
+
+
+
+}
+.izq_busqueda{
+    background: white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.izq_trends{
+    background: white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.izq_follow{
+    background: white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+} */
+
+
+/* esto 👆 es equivalente a esto 👇
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4 */

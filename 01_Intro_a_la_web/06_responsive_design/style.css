@@ -1,0 +1,44 @@
+/* Principio básico de responsive */
+
+body{
+    background-color: rgb(41, 8, 59);
+    font-family: sans-serif;
+    color: rgb(251, 255, 212);
+}
+
+.top-nav a {
+    float: left;
+    padding: 1rem .5rem;
+    color: yellow;
+}
+
+.menu{
+    display: none;
+}
+/* Aplicando el mediaqueri */
+
+@media screen and (min-width:480px) (max-width:7680px) {
+    body{
+        background: lightblue;
+        font-family: monospace;
+        color: black;
+    }
+    .top-nav{
+        display: none;
+    }
+    menu{
+        display: block;
+    }
+}
+
+.top-nav{
+    background: navy;
+}
+
+    
+/* 
+MOBILE FIRST
+considera las condiciones indican los MÍNIMOS NECESARIOS para determinadas propiedades
+DESKTOP FIRST
+las condiciones indican los MAXIMOS NECESARIOS para determinadas propiedades
+*/

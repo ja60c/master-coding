@@ -1,0 +1,92 @@
+.bandera{
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fila1{
+    background-color: red;
+    height: 200px;
+    width: 700px;
+
+    display: flex;
+
+    flex-direction: row;
+    justify-content:  space-between; 
+
+}
+
+.fila2{
+    background-color: blue;
+    height: 150px;
+    width: 700px;
+
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.fila3{
+    background-color: red;
+    height: 200px;
+    width: 700px;
+
+    display: flex;
+
+    flex-direction: row;
+    justify-content:  space-between; 
+}
+
+.nieta1{
+    height: 185px;
+    width: 135px;
+    border-right: 15px solid white;
+    border-bottom: 15px solid white;
+}
+.nieta2{
+    background-color: blue;
+    height: 200px;
+    width: 150px;
+}
+.nieta3{
+    height: 185px;
+    width: 385px;
+    border-left: 15px solid white;
+    border-bottom: 15px solid white;
+}
+.nieta1b {
+    height: 185px;
+    width: 135px;
+    border-right: 15px solid white;
+    border-top: 15px solid white;
+}
+.nieta3b{
+    height: 185px;
+    width: 385px;
+    border-left: 15px solid white;
+    border-top: 15px solid white;   
+}
+
+
+
+
+
+
+/* flex-direction */
+    /* flex-direction: column */
+    /* flex-direction: column-reverse; */
+    /* flex-direction: row */
+    /* flex-direction: row-reverse */ 
+    
+    /*justify-content:  flex-start; /*esta solo funciona si tengo antes display-flex*/
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /*justify-content: space-around;*/
+
+    /* align-items: flex-start; alineaciones sobre el eje vertical */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+    /* align-items: stretch; */

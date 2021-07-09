@@ -1,0 +1,67 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.title{
+    padding: 1rem;
+}
+.main{
+    display: grid;
+    width: 100vw;
+    height: 900vh;
+    background: blue;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+}
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle-item{
+    width: 100px;
+    height: 100px;
+    background: #1f1f1f;
+    border-radius: 50%;
+}
+
+.circle-item.hover-state: :hover,
+.circle-item.hover-state:focus,
+.circle-item.hover-state: active {
+    bacground: aliceblue;
+}
+
+.circle-item.time_descr:hover {
+    background: orange;
+    width: 150px;
+    height: 150px;
+    /* equivalencia: transition-property
+    transition-delay: 1s; */
+
+}
+.circle-item.hover-state: hover {
+    width: 100px;
+    height: 100px;
+    background: #1f1f1f;
+    border-radius: 50%;
+}
+
+.circle-item.hover-state: hover, circle-item.hover-state:focus, .circle-item.hover-state:active{
+    background: aliceblue;
+    width: 200px;
+    height:200px;
+}
+.ease_ease{
+    transition-timing-function: ease;
+}
+
+.ease_ease-in{
+    transition-timing-function: ease-in;
+
+}
+
+.ease_ease-out{
+    transition-timing-function: ease-out;
+
+}

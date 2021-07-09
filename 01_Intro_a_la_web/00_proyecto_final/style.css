@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.full_cont_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.row-height{
+    max-height: 20vh;
+}
+.col-md-3{
+    /* filter: grayscale(50%); Este filtro afecta la animación*/
+    transition: transform .4s; 
+}    
+.col-md-3:hover{
+    /* filter: grayscale(0%); Este filtro afecta la animación*/
+    transform: scale(1.4);
+}
+.btn {
+    background-color: #00a0df;
+    border: none;
+    color: black;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #3c00ff;
+    color: white;
+
+}
+
+.color-form{
+    background-color: #000031;
+    color: white;
+}
+
+.video{
+    width: 100%;
+    height: 100%;
+
+}
