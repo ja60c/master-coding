@@ -1,0 +1,63 @@
+html{
+    background-image: url(https://i2.wp.com/www.buenmercadoacasa.com/blog/wp-content/uploads/2016/09/curiosidades-frutas-buenmercadoacasa.jpg?resize=1080%2C675&ssl=1);
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font:Helvetica;
+      color: #666;
+      font-size: 1em;
+      line-height: 1.5;
+    
+    }
+    
+    h1 {
+        font-size: 2.3em;
+        line-height: 1.3em;
+        margin: 15px 0;
+        text-align: center;
+        font-weight: 300;
+    }
+    p {
+        margin: 0 0 1.5em 0;
+    }
+    
+    #main-header {
+        background: #333;
+        color: rgb(245, 255, 243);
+        height: 80px;
+        padding-top: 10px;
+    }
+    #main-content{
+        background: rgb(242, 255, 230);
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        margin-top: 0;
+        margin-bottom: 3%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 2%;
+    
+    
+    }
+    #main-footer{
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+    
+    input {
+        background-color: rgb(235, 235, 235);
+        border-color: rgb(99, 175, 0);
+        border-width: 3px;
+        margin: 3px;
+    } 
+    
+    button {
+        background-color:  rgb(175, 0, 0);
+        
+        color: white;
+    }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto final g2</title>
+</head>
+<body>
+
+    <h1 id="main-header">¡Mantente sano! 🍎</h1>
+      <p></p>
+      <div id="main-content">
+        <h4 style="color: brown;">Conoce tu Índice de Masa Corporal completando los siguientes campos:</h4>
+        <input type="text" id="peso_IMC" placeholder="Ingresa tu peso en kg">
+        <p></p>
+        <input type="text" id="altura_IMC" placeholder="Ingresa tu altura en m">
+        <p></p>
+        <button id="boton_IMC">Calcula tu IMC</button> 
+        <p></p>
+
+<!-- Formula Calorias -->
+
+    <p id="respuesta_Categoria"><!-- p#respuesta -->Su IMC es <b id="respuesta_IMC">15.8</b>, lo que indica que su peso está en la categoría de <b id="categoria_Peso">Bajo peso</b> para adultos de su misma estatura.
+             
+    <p id="respuesta_Doctor"> Hable con su proveedor de atención médica para establecer las posibles causas del bajo peso y si necesita ganar peso.</p>
+    
+        <h4 style="color: brown;">Para calcular cuántas calorías debes consumir al día proporciona la siguiente información:</h4>
+    <!-- peso / altura / edad -->
+        <p></p>
+        <input type="text" id="peso-calorias" placeholder="Ingresa tu peso en kg">
+        <p></p>
+        <input type="text" id="altura-calorias" placeholder="Ingresa tu altura en cm">
+        <p></p>
+        <input type="text" id="edad" placeholder="Tu edad en años">
+    <!-- Mujer / Hombre -->
+    <p></p>
+        <select name="OS" id="sexo">
+        <option selected disabled value=""> ¿Cuál es tu sexo?</option>
+            <option value="mujer" id="mujer">Mujer</option> 
+            <option value="hombre" id="hombre">Hombre</option> 
+        </select>
+    <p></p>
+    <!-- radio form nivel de actividad -->
+    <p style="color: brown;">¿Cuál es tu nivel de actividad diaria?</p>
+    
+            <form>
+                <fieldset>
+                <input type="radio" id="poco" name="poco">
+                <label for="poco">Poco o ningun ejercicio</label><br/>
+            
+                <input type="radio" id="ligero" name="ligero">
+                <label for="ligero">Ejercicio ligero (1 a 3 días a la semana)</label><br/>
+            
+                <input type="radio" id="moderado" name="moderado">
+                <label for="moderado"> Ejercicio moderado (3 a 5 días a la semana)</label><br/>
+
+                <input type="radio" id="fuerte" name="fuerte">
+                <label for="fuerte">Ejercicio fuerte (6 a 7 días a la semana)</label><br/>
+
+                <input type="radio" id="muy-fuerte" name="muy-fuerte">
+                <label for="muy-fuerte"> Ejercicio muy fuerte (dos veces al día, entrenamientos pesados)</label>
+                </fieldset> 
+            </form><br/>
+           
+    <button id="boton-calorias">Calcula las calorías que necesitas</button> <br/>
+    <p > Necesitas <b><span id="respuesta-calorias">0</span> kcal</b> por día.</p>
+    <p></p>
+    
+  <!-- Calcula proteina -->
+
+    
+        <h4 style="color: brown;">Ahora calcula cuánta proteína necesita tu cuerpo:</h4> 
+        <fieldset>
+            <input type="text" id="peso_Proteina" placeholder="Ingresa tu peso en lb">
+            <p></p>
+            <p style="color: brown;">¿Qué tipo de actividad física realizas?</p>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="entreno_Bajo">
+            <label class="form-check-label" for="flexRadioDefault1">Nivel bajo de entrenamiento</label>
+            <p></p>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="entreno_Resistencia">
+            <label class="form-check-label" for="flexRadioDefault1">Entrenamiento de resistencia</label>
+            <p></p>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="entreno_Fuerza">
+            <label class="form-check-label" for="flexRadioDefault1">Entrenamiento de fuerza</label>
+            <p></p>
+            <button id="boton_Proteina">Calcula las calorías que necesitas</button> 
+            <p>Calcula cuánta proteína necesitas</p>  
+            <p></p>
+            <p> Necesitas <b id="resultado_Proteina">180 libras</b> por día.</p> 
+        </fieldset>
+        <p style="color: brown;">* Consulta a tu médico. Esta información es una guía que pretende ser un punto de referencia, las acciones que se tomen con base en esta información son responsabilidad de quien las efectue.</p>
+    </div>
+      </div>
+       
+    <div id="main-footer">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
