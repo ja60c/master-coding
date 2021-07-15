@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>Personajes de Rick N Morty! 🌎</h1>
+    <Card imagen="https://rickandmortyapi.com/api/character/avatar/8.jpeg" name="Jacqueline" species="humano" origin="Tierra"/>
+    </>
+  );   
 }
 
 export default App;
