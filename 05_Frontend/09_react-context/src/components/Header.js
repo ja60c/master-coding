@@ -6,7 +6,7 @@ function Header() {
     const { toggle, toggleFunction } = useContext(themeContext);
     return (
         <div className={ `header ${toggle ? 'dark' : 'light'}` }>
-            <h2>Soy el header! 🎩</h2>
+            <h1>Soy el header! 🎩</h1>
             <button className={ `boton ${toggle ? 'dark' : 'light'}` } onClick={ toggleFunction }>Cambiar tema: {toggle ? 'Dark' : 'Light'}</button>
         </div>
     );
