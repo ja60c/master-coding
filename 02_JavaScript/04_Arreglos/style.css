@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body {
+    background-color: lemonchiffon;
+    font-family: sans-serif;
+}
+
+.titulo {
+    font-family: 'Righteous';
+    color: mediumpurple;
+    text-align: center;
+    font-size: 3em;
+}
+
+.descripcion {
+    color: cornflowerblue;
+    text-align: center;
+    display: block;
+    /* margin: 0 30em; */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bold-italic {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.div {
+    background-color: khaki;
+    margin: 0 15em;
+    padding: 1em;
+}

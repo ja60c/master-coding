@@ -42,7 +42,7 @@ console.log(colores); //aquí borra el blanco también
 
 //SPLICE
 //permite eliminar un elemento intermedio o valores especificos del arreglo
-//arreglo.sploce(arg1, arg2, arg3) (argumento1, arg2, arg3)
+//arreglo.splice(arg1, arg2, arg3) (argumento1, arg2, arg3)
 // arg1 -> en qué posición quieres empezar
 // arg2 -> cuantos valores quieres remover
 // arg3 -> elemento que se desea sustituit (opcional, no s)iempre es necesario)
@@ -91,10 +91,11 @@ for (let i = 0; i < colaboradores.length; i++){
 
 //FOREACH
 //arreglo.forEach(elemento -> tarea) // 1.el primer elemento de la funcion (argumento) 2. lo que se hará
-//arreglo.forEach(elementoActual, posición, arreglo completo) ->
+//arreglo.forEach((elementoActual, posición, arreglo completo) => tarea)
 //normalmente el nombre del arreglo va en plurar y cada uno de los elementos en singular
 colaboradores.forEach(colaborador => console.log(colaborador)); //esto se manda como una función y se formula en una misma línea
-//👆🏽 Dice: por cada elemento de este arreglo le vas a aplicar... 
+//👆🏽 Dice: a cada ELEMENTO del arreglo le vas a llamar COLABORADOR 
+// => y la tarea que harás será IMPRIMIR EN CONSOLA A CADA COLABORADOR
 colaboradores.forEach((elementoActual, posición, arregloCompleto) => {
     console.log(elementoActual);
     console.log(posición);
@@ -103,17 +104,16 @@ colaboradores.forEach((elementoActual, posición, arregloCompleto) => {
 
 //MAP
 //Permite crear un nuevo arrreglo a partir de otro arreglo
+// arreglo.map(elemento => tarea)
+// arreglo.map((elementoActual, posición, arregloCompleto) => tarea)
 let colaboradoresFelices = colaboradores.map(colaborador => {
     return {nombre: colaborador.nombre, sueldo: Number(colaborador.sueldo) + 10000} 
 })
-//SPREAD SYNTAX ...objeto (trae todas las propiedades que encuentre de cada uno de los elementos de ese arreglo)
-// let colaboradoresFelices = colaboradores.map(colaborador => {
-//     return {...colaborador, sueldo: (colaborador.sueldo + 10000)} //fred sintax (trae todas las propiedades que encuentre de cada uno de los elementos de ese arreglo)
-// })
+console.log('Colaboradores 👩🏻‍💼', colaboradores);
+console.log('Colaboradores Felices‍ 🤩', colaboradoresFelices);
 
-console.log('Colaboradores 🙋🏽‍♀️', colaboradores);
-console.log('Colaboradores felices 😀', colaboradoresFelices);
-
+//SPREAD SYNTAX ...objeto 
+// Esto permite extraer/acceder a todas las propiedades del objeto sin tener que escribirlas cada una
 colaboradores.map((elementoActual, posición, arregloCompleto) =>{
     console.log(elementoActual);
     console.log(posición);
@@ -121,7 +121,8 @@ colaboradores.map((elementoActual, posición, arregloCompleto) =>{
 })
 
 // FILTER
-// Permite crear un areglo a partir de elemtnos de otro arreglo poero que cumplan determinada condición, es decir, filtra los elementos del arreglo
+// Permite crear un areglo a partir de elemtnos de otro arreglo que cumplan determinada condición, es decir, filtra los elementos del arreglo
+// arreglo.filter(elemento => tarea)
 let directivos =  colaboradores.filter(colaborador => {
     return colaborador.sueldo >= 30000
 })
