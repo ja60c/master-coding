@@ -15,8 +15,6 @@ console.log('Hoy veremos condicionales');
 // Si la contraseña es correcta, mostrar en consola: 'Bienvenido'
 // Si la contraseña no es correcta, mostrar en consola: 'Password incorrecto, intente de nuevo'
 
-
-
 // let pasword = "tiriri";
 // let usuario = prompt ("Ingresa tu contraseña");
 
@@ -31,18 +29,14 @@ console.log('Hoy veremos condicionales');
 // Van a decir si este numero es par o es impar.
 // Utilizar símbolo de modulo/residuo -> % <-
 
-// let ingreso = Number(prompt("ingresa un numero"));
-// let residuo = ingreso%2
-
-// if (ingreso % 2 == 1){
-//     alert("tu numero es impar")
-// } else if (residuo == 0){
-//     alert("tu numero es par")
+// let usuario = prompt('Ingresa un num')
+// if (usuario%2 == 0) {
+//     alert('Tu número es par');
+// } else if (usuario%2 == 1){
+//     alert('Tu número es impar');
 // } else {
-//     alert("ingresa numero")
+//     alert('Por favor, ingresa un número')
 // }
-
-
  // 👉 Ver plantillas ${} y Number(prompt()) 👈
 
 // ------- RETO 3
