@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One';
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 2em; 
+    text-align: center;
+    padding: .5em;
+    display: flex;
+    justify-content: space-around;
+    transition: .5s;  
+}
+
+.boton {
+    padding: 2em;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 2em;
+    transition: .5s;  
+
+}
+
+.boton:hover{
+    box-shadow: 2px 2px 2px black;
+}
+
+.boton:active {
+    transform: translateY(2px);
+}
+
+.main {
+    font-size: 2em;
+    text-align: center;
+    padding: 3em 0em;
+    margin: 1em;
+    transition: .5s;  
+
+}
+
+.footer {
+    text-align: center;
+    padding: 1em;
+    transition: .5s;  
+
+}
+
+.light {
+    background-color: lightsteelblue;
+    color: midnightblue;
+}
+
+.dark {
+    background-color: midnightblue;
+    color: lightsteelblue;
+}

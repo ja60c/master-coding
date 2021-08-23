@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Space+Grotesk:wght@300&display=swap');
+
+body {
+  font-family: 'Fredoka One';
+  background-color: rgb(78, 139, 59);
+}
+
+.header {
+  color: lightyellow;
+  font-family: 'Fredoka One';
+  background-color: palevioletred;
+  text-align: center;
+}
+
+.navbar {
+  background-color: palevioletred;
+  color: lightyellow;
+}
+
+.main {
+  text-align: center;
+  padding: 3em;
+  
+}
+
+.titulo {
+  font-family: 'Fredoka One';
+  color: lightskyblue;
+  margin-top: 2em;
+}
+
+.descripcion {
+  font-family: 'Space Grotesk';
+}
+
+.carrusel {
+  display: flex;
+  
+}
+
+h3 {
+  font-family: 'Fredoka One';
+}
+
+
+
+
