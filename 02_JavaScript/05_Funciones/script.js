@@ -23,7 +23,9 @@ function saludar(){
 //para mandarla llamar:
 saludar()
 
-//a los parametros les puedo dar el nombre que quiera, pero los parametros NO SON VARIABLES, son ARGUMENTOS, por eso no es necesario declararlos previamente
+// a los parametros les puedo dar el nombre que quiera,
+// los parametros NO SON VARIABLES, son ARGUMENTOS, 
+// por eso no es necesario declararlos previamente
 function saludarAlumno(alumno){
     console.log('Hola, ' + alumno + ' desde la función saludar! 🖐🏽👩🏽‍🎓⚒');
 }
@@ -32,18 +34,16 @@ saludarAlumno('Alejandrina')
 saludarAlumno('Raúl')
 saludarAlumno('Max')
 
-//esas son funcions tradicionales, pero tambien existen las:
-
-//ARROW FUNCTIONS / FUNCIONES FLECHA    son un poco más simples, y se reducen a una línea
+// ARROW FUNCTIONS / FUNCIONES FLECHA    
+// son un más simples, pues se reducen a una línea
 // Sintaxis básica: () => {tarea}
 // Como buena práctica se sugiere declararlas como const
-// Las funciones flecha hacen la declaración de funciones más "elehantes" ya que se pueden declarar en una sola línea y evitar caracteres como ; y/o {}
+// Las funciones flecha hacen la declaración de funciones más "elegantes" ya que se pueden declarar en una sola línea y evitar caracteres como ; y/o {}
 
 // funcion tradicional:
 function funcionTradicional(){
     console.log('Hola desde funcion tradicional 🖐');
 }
-
 // funcion flecha:
 const funcionFlecha = () => console.log('Hola desde funcion flecha 🏹');
 
@@ -57,23 +57,26 @@ const funcionFlechaConParametros = (param1, param2, param3) => {
 }
 funcionFlechaConParametros('Este es el param1', 45534, {nombre:'parametro3'})
 
-//EJEMPLO EJECUTA CONSOLE DIRECTAMENTE: crear una funcion que reciba como parametros 2 números e imprima en consola la suma de los mismos
-//esta IMPRIME en consola, no retorna
-//con una función tradicional:
-function sumaDosNumeros(num1, num2){
-    console.log(num1 + num2);
+//EJEMPLO EJECUTA CONSOLE DIRECTAMENTE: 
+// crear una funcion que reciba como parametros 2 números 
+// e imprima en consola la suma de los mismos
+// esta IMPRIME en consola, no retorna
+// con una función tradicional:
+function sumaDeDosNumeros(numero1, numero2) {
+    console.log('La suma de los dos números es: ' + (numero1 + numero2))    
 }
-sumaDosNumeros(5,8) //se imprime 13
+sumaDeDosNumeros(32, 8)
 
 // con una función flecha: nos deja quitarle las llaves y ponerlas en una sóla línea
-const sumaDosNumerosFlecha = (num1, num2) => console.log(num1 +num2);
-
-sumaDosNumerosFlecha(50, 60)
+const sumaDeDosNumerosFlecha = (num1, num2) => console.log(num1+num2);
+sumaDeDosNumerosFlecha(3, 4)
 
 //EJEMPLO CON RETURN
-// Se utiliza la palabra reservada return para indicar dónde finaliza nuestra función y/o qué es lo que nos debe retornar
-// Todo lo que se ponga desés del return NO se va a ejecutalr
-// En las funciones flecha si la declaración queda en una sola línea, el return queda implícito, es decir que no se necesita escribirlo
+// Se utiliza la palabra reservada return para indicar 
+// dónde finaliza nuestra función y/o qué es lo que nos debe retornar
+// Todo lo que se ponga después del return NO se va a ejecutar
+// En las funciones flecha si la declaración queda en una sola línea
+// el return queda implícito, es decir que no se necesita escribirlo
 
 console.log('Ejemplo con return-----------');
 
@@ -86,16 +89,15 @@ console.log(sumaDos(100, 50));
 let suma = sumaDos(100, 50);
 console.log(suma);
 
-
 //con una función flecha:
-const sumaDosReturnFlecha = (num1, num2) => num1 + num2
-
+const sumaDosReturnFlecha = (num1, num2) => num1 + num2;
 sumaDosReturnFlecha(10, 50);
 console.log(sumaDosReturnFlecha(10, 50));
 let sumaFlecha = sumaDosReturnFlecha(10, 50);
 console.log(sumaFlecha);
 
-// Mandar a llamr una funcion, dentro de otra, de manera simple, gracias a la sintaxis de funciones flecha
+// Mandar a llamar una función, dentro de otra, 
+// de manera simple, gracias a la sintaxis de funciones flecha
 console.log('------funcion dentro de otra');
 const imprimirEnConsola = (valor) => console.log(valor);
 imprimirEnConsola(sumaDosReturnFlecha(10, 30));
