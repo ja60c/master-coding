@@ -42,4 +42,3 @@ document.write("</br>6. ahora pedro se llama " + amigos[0])
 enemigos.push("tor")
 console.log(enemigos)
 document.write('</br>5. ahora ' + `<b style='font-weight:bold'> ${enemigos[3]}` +" <b style='font-weight:normal'>  es también mi enemigo! 👿")
-
