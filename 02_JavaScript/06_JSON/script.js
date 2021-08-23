@@ -28,8 +28,7 @@ console.log(objetoPersonaJSON); // JavaScript YA lo interpreta como un objeto
 // JSON.parse(json) -> convierte el formato JSON a un objeto literal de js.
 // JSON.stringify(objeto) ->convierte un objeto literal de js a formato JSON
 
-
-//Objeto literal de JS
+// Objeto literal de JS
 let mascota ={
     nombre: 'snoopy',
     raza: 'Beagle',
@@ -47,8 +46,8 @@ console.log(mascotaJS);
 
 //TIPOS DE DATOS  VÁLIDOS EN JSON
 // string
-// Number
-// Object (contener valores de json validos)
+// number
+// object (contener valores de json válidos)
 // arreglos
 // booleanos
 // null
@@ -60,63 +59,65 @@ console.log(mascotaJS);
 
 // FETCH (como "traeme algo")
 // El método fetch() permite hacer peticiones directamente desde el navegador
-// Este método nos regresa un copcepto llamado: PROMESA, es decir, una propiedad que tiene 3 estados: pendiente, resuelta o rechazada.
+// Este método nos regresa un concepto llamado: PROMESA, 
+// es decir, una propiedad que tiene 3 estados: pendiente, resuelta o rechazada.
 
 // SINTAXIS BÁSICA:
-// fetch(url) 
+// fetch(url, opciones) ---------> la url es a donde se hará la petición, las opciones es en caso de que queramos cambiar de método o agregar credenciales de acceso
 //     .then(respuesta =>{
 //     //manejamos la respuesta
 //     })
-//     .then(data=>{ 
+//     .then(data=> { 
 //     //manejamos la data
 //     })
-//     .catch(error =>{
+//     .catch(error => {
 //     //cacha cualquier error que haya surgido
 //     //manejamos el error
 //     })
 
-//EJEMPLO TRAYENDO UN JSON LOCAL
-
+// //EJEMPLO TRAYENDO UN JSON LOCAL
 const JSON_LOCAL = 'usuarios.json'
 
 fetch(JSON_LOCAL) 
     .then(response =>{
         console.log(response);
+        console.log(response.status);
         return response.json();
     })
     .then(usuarios => {
         console.log(usuarios);
+    // console.log(usuarios[0]);
+    // console.log(usuarios[1]);
+
+    // Imprimiendo con un ciclo for
+    for (var i = 0; i < usuarios.length; i++) {
+      console.log(usuarios[i]);
+    }
+
+    // Imprimiendo con un forEach
+    usuarios.forEach(usuario => console.log(usuario));
     })
-    .catch(error=>{
+    .catch(error => {
         console.log(error);
     })
 
+// TRAYENDO UN JSON REMOTO CON FETCH
+const URL_POKEAPI = 'https://pokeapi.co/api/v2/pokemon';
+fetch(URL_POKEAPI)
+    .then(response => response.json())
+    .then(pokemones => pokemones.results.forEach(pokemon => console.log(`Hola soy ${pokemon.name}`)))
+    .catch(error => console.log(error))
 
-//Imprimiendo con un ciclo for
+// También podemos traer y procesar texto con respuesta.text()
+const txtLocal = 'texto.txt';
+fetch(txtLocal)
+  .then(response => response.text())
+  .then(texto => console.log(texto))
+  .catch(error => console.log(error))
 
-//Imprimiento con un forEach
-
-
-// Mapeando el arreglo de usuarios
-
-//Trayendo un JSON remoto
-
-const URL_POKEAPI = 'https://pokeapi.co/api/v2/pokemon'
-
-fetch(URL_POKEAPI) 
-    .then(response =>{
-        console.log(response);
-        return response.json();
-    })
-    .then(pokemones.results => {
-        console.log(pokemones);
-    })
-    .catch(error=>{
-        console.log(error);
-    })
-
-// TRAYENDO TEXTO
-
-// TRAYENDO IMÁGENES
-
-
+// También podemos traer y procesar imágenes con respuesta.blob()
+const imgLocal = 'imagen.jpg';
+fetch(imgLocal)
+  .then(response => response.blob())
+  .then(imagen => console.log(imagen))
+  .catch(error => console.log(error))
