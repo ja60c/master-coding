@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura MVC 🏗</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <h1>Arquitectura MVC 🏗 </h1>
+    <h2>TODO List</h2>
+
+    <div id="todo-app">
+        <form onsubmit="view.addItem(e)" id="form">
+            <input type="text" id="add-item" />
+            <input type="submit" />
+        </form>
+        <ul id="todo-list">
+            <li>
+                <span style="text-decoration: line-through;">
+                    Clase coding
+                </span>
+                <a>✅</a>
+                <a>❌</a>
+            </li>
+            <li>
+                <span style="text-decoration: line-through;">
+                    Clase coding
+                </span>
+                <a>✅</a>
+                <a>❌</a>
+            </li>
+            <li>
+                <span style="text-decoration: line-through;">
+                    Clase coding
+                </span>
+                <a>✅</a>
+                <a>❌</a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+</html>
