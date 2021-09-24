@@ -1,5 +1,4 @@
 console.log('Hola desde index! 👋🤬😱😳😂');
-console.log('cmBISASASASASDASDJHD');
 
 // CRUD
 // Create - Read - Update - Delete
@@ -12,21 +11,19 @@ const request = require('request');
 const URL_BASE = 'https://goodreads-devf-aaron.herokuapp.com/api/v1/authors/';
 
 // CREATE AUTHOR - POST
-// const jsonSend = {
-//         "name": "Pedrito",
-//         "last_name": "Gonzalez",
-//         "nacionalidad": "MX",
-//         "biography": "Un sensei buena onda",
-//         "gender": "M",
-//         "age": 27,
-//         "is-alive": "true"	
-// }
 
-// request.post(URL_BASE, {form: jsonSend}, (err, res, body) => {
-//     console.log('Error: ', err);
-//     console.log('Respuesta: ', res.statusCode);
-//     console.log('Body: ', body);
-// })
+const createAuthor = (name, last_name, nacionalidad, biography, gender, age) => {
+    const jsonSend = {name, last_name, nacionalidad, biography, gender, age}
+
+    request.post(URL_BASE, {form: jsonSend}, (err, res, body) => {
+        console.log('Error: ', err);
+        console.log('Respuesta: ', res.statusCode);
+        console.log('Body: ', body);
+    })
+}
+createAuthor('Franky', 'Rucho', 'MX', 'Ruchitos' 'lindos', 'F', 7);
+
+
 
 // READ ALL AUTHORS - GET
 // cons readAllAuthors = () => {
