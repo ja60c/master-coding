@@ -1,6 +1,8 @@
+const UsersModel = require('../models/UsersModel');
+
 const { Pool } = require('pg');
 
-const pool = new Pool({
+const db = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'postgres',
@@ -8,7 +10,7 @@ const pool = new Pool({
   port: 5432
 });
 
-const createUser = (req, res) => {
+const createUser = async (req, res) => {
   // Lógica de create
   const { email, password } = req.body;
 
@@ -16,40 +18,27 @@ const createUser = (req, res) => {
     return res.status(400).send({ message: 'Ingresar email y password' });
   }
 
-  // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
-    .query('INSERT INTO users (email, password) VALUES($1, $2) RETURNING *', [
-      email,
-      password
-    ])
-    .then(result => {
-      return res
-        .status(201)
-        .send({ message: 'Usuario creado!', user: result.rows[0] });
-    })
-    .catch(err => console.error(err.stack));
+ // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
+ const user = await UsersModel.createUser(email, password, db);
+
+ return res.status(201).send({ message: 'Usuario creado!', user });
 };
 
-const getAllUsers = (req, res) => {
+const getAllUsers = async (req, res) => {
   // Lógica de read all
 
   // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
-    .query('SELECT * FROM users')
-    .then(result => {
-      return res
-        .status(200)
-        .send({ message: 'Estos son tus usuarios!', users: result.rows });
-    })
-    .catch(err => console.error(err.stack));
+  const users = await UsersModel.getAllUsers(db);
+  
+  return res.status(200).send({ message: 'Estos son tus usuarios!', users });
 };
 
-const getUserById = (req, res) => {
+const getUserById = async (req, res) => {
   // Lógica de read one
   const { id } = req.params;
 
   // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
+  db
     .query('SELECT * FROM users WHERE user_id = $1', [id])
     .then(result => {
       return res.status(200).send({
@@ -60,15 +49,15 @@ const getUserById = (req, res) => {
     .catch(err => console.error(err.stack));
 };
 
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
   // Lógica de update
   const { id } = req.params;
   const { email, password } = req.body;
 
   // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
+  db
     .query(
-      'UPDATE users SET email = $1, password = $2 WHERE user_id = $3 RETURNING *',
+      'UPDATE users SET email = $1, password = $2 WHERE user_id = $3 RETURNING *', 
       [email, password, id]
     )
     .then(result => {
@@ -84,11 +73,14 @@ const updatePartialUser = (req, res) => {
   // Lógica de partial update
   const { id } = req.params;
   const { property, value } = req.body;
+  // if(!property || !value) {
+  //   return res.status(400)
+  // }
 
   // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
+  db
     .query(
-      `UPDATE users SET ${property} = '${value}' WHERE user_id = ${id} RETURNING *`
+      `UPDATE users SET ${property} = '${value}' WHERE user_id = ${id} RETURNING *` // CUIDADO CON LOS VALORES
     )
     .then(result => {
       return res.status(200).send({
@@ -104,7 +96,7 @@ const deleteUser = (req, res) => {
   const { id } = req.params;
 
   // A PARTIR DE AQUÍ VA LA CAPA QUE ACCEDE A LA BASE DE DATOS (MODELS)
-  pool
+  db
     .query('DELETE FROM users WHERE user_id = $1', [id])
     .then(result => {
       return res.status(204).send();
