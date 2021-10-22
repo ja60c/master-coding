@@ -1,11 +1,11 @@
-const UsersModel = require('../models/UsersModel');
+const { Pool } = require('pg');
 
 const db = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: '5qLja60c',
-  port: 5432
+    user: 'postgres',
+    host: 'localhost',
+    database: 'postgres',
+    password: '5qLja60c',
+    port: 5432
 });
 
 const createUser = (email, password) => {
