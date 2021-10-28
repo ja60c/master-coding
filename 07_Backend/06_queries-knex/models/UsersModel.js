@@ -2,47 +2,89 @@ const db = require('../db');
 
 const createUser = body => {
   return db('users')
-    .insert({ email: body.email, password: body.password })
+    .insert(body)
     .returning('*')
-    .then(result => result[0])
-    .catch(err => console.error(err.stack));
+    .then(result => result[0]);
 };
 
 const getAllUsers = () => {
   return db
     .select('*')
     .from('users')
-    .then(result => result)
-    .catch(err => console.error(err.stack));
+    .where({ is_active: true });
 };
 
-const getUserById = id => {
-    return db
-      .select('*')
-      .from('users')
-      .where({ user_id: id })
-      .then(result => result)
-      .catch(err => console.error(err.stack));
-  };
+const getUserById = async id => {
+  const user = await db
+    .select('*')
+    .from('users')
+    .where({ user_id: id, is_active: true })
+    .then(result => result[0]);
 
-const updateUser = (email, password, id) => {
-    return db
-      .update('users')
-      .set('email = $1, password = $2')
-      .where('user_id = $3')
-      .returning('*'),
-      [email, password, id]
-      .then(result => result)
-      .catch(err => console.error(err.stack));
-  };
+  if (!user) {
+    throw new Error('El usuario que quieres traer no existe');
+  }
+  return user;
+};
 
-const deleteUser = user_id => {
-  return db 
-      .delete('*')
-      .from('users')
-      .where('user_id = $1', [user_id])
-      .then(result => result)
-      .catch(err => console.error(err.stack));
-}
+const updateUser = async (id, body) => {
+  const user = await db
+    .select('*')
+    .from('users')
+    .where({ user_id: id, is_active: true })
+    .then(result => result[0]);
 
-module.exports = { createUser, getAllUsers, getUserById, updateUser, deleteUser };
+  if (!user) {
+    throw new Error('El usuario que quieres actualizar no existe');
+  }
+
+  return db('users')
+    .update(body)
+    .where({ user_id: id })
+    .returning('*')
+    .then(result => result[0]);
+};
+
+const deleteUser = async id => {
+  const user = await db
+    .select('*')
+    .from('users')
+    .where({ user_id: id, is_active: true })
+    .then(result => result[0]);
+
+  if (!user) {
+    throw new Error('El usuario que quieres eliminar no existe');
+  }
+
+  return db('users')
+    .update({ is_active: false })
+    .where({ user_id: id })
+    .returning('*')
+    .then(result => result[0]);
+};
+
+const destroyUser = async id => {
+  const user = await db
+    .select('*')
+    .from('users')
+    .where({ user_id: id, is_active: false })
+    .then(result => result[0]);
+
+  if (!user) {
+    throw new Error(
+      'El usuario que quieres destruir aún se encuentra activo o no existe'
+    );
+  }
+  return db('users')
+    .where({ user_id: id, is_active: false })
+    .delete();
+};
+
+module.exports = {
+  createUser,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+  destroyUser
+};
