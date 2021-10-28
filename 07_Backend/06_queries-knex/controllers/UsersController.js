@@ -1,18 +1,73 @@
-const createUser = (req, res) => {
-    const newUserId = Math.floor(Math.random() * 1000);
-    return res
-    .status(200)
-    .send({ message: 'Hola desde el server POST!', newUserId });
-} 
+const { UsersModel } = require('../models');
 
-const getAllUsers = (req, res) => {
-    const users = [
-        { email: 'jcr@gmail.com', password: '123' }, 
-        { email: 'jajar@gmail.com', password: 'jaja123' }
-    ];
+const createUser = async (req, res) => {
+  try {
+    const user = await UsersModel.createUser(req.body);
     return res
-    .status(200)
-    .send({ message: 'Hola desde el server GET!', users} );
-}
+      .status(200)
+      .send({ message: 'Hola desde el server con POST!', user });
+  } catch (e) {
+    return res
+      .status(400)
+      .send({ message: 'Error al crear usuario', error: e.stack });
+  }
+};
 
-module.exports = { createUser, getAllUsers };
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await UsersModel.getAllUsers();
+    return res
+      .status(200)
+      .send({ message: 'Hola desde el server con GET!', users });
+  } catch (e) {
+    return res
+      .status(400)
+      .send({ message: 'Error al traer usuarios', error: e.stack });
+  }
+};
+
+const getUserById = async (req, res) => {
+    try {
+      const { id } = req.params;  
+      const user = await UsersModel.getUserById(id);
+      return res
+        .status(200)
+        .send({ message: `Este es tu usuario con el id ${id}`, user });
+    } catch (e) {
+      return res
+        .status(400)
+        .send({ message: `Error al traer usuario con el id ${id}`, error: e.stack });
+    }
+};
+
+const updateUser = async (req, res) => {
+    try {
+        const { id } = req.params;  
+        const { email, password } = req.body;
+        const user = await UsersModel.updateUser(email, password, id);
+      return res
+        .status(200)
+        .send({ message: `Usuario actualizado: ${id}`, user });
+    } catch (e) {
+      return res
+        .status(400)
+        .send({ message: `Error al actualizar el usuario con el id ${id}`, error: e.stack });
+    }
+};
+
+const deleteUser = async (req, res) => {
+    try {
+      const { id } = req.params;  
+      const user = await UsersModel.deleteUser(id);
+      return res
+        .status(200)
+        .send({ message: 'Usuario borrado', user});
+    } catch (e) {
+      return res
+        .status(400)
+        .send({ message: 'Error al borrar usuario', error: e.stack });
+    }
+};
+
+
+module.exports = { createUser, getAllUsers, getUserById, updateUser, deleteUser };
