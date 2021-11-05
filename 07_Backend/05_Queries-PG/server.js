@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const app = express();
-const PORT = 8080;
+const { errors } = require('celebrate');
 
 // MIDDLEWARES
 app.use(express.json()); // para procesar json
@@ -13,6 +13,6 @@ app.use(helmet()); // para aumentar la seguridad de nuestro servidor (revisar he
 
 // ENDPOINTS
 app.use('/api/v1', require('./routes'));
+app.use(errors());
 
-// LISTENER
-app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
+module.exports = app;
