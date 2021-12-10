@@ -24,7 +24,7 @@ const createPost = (req, res) => {
   
 // Read All - GET
 const findAllPosts = (req, res) => {
-    PostsModel.find()
+    PostsModel.find({ isActive: true })
         .then(posts => res.status(201).send({ message: 'Aquí los posts!', posts }))
         .catch(error =>
         res
